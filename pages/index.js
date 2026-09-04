@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import Gallery from '../components/Gallery'
+import { withBasePath } from '../lib/asset'
 
 export default function Home({ images }){
   return (
@@ -45,7 +46,7 @@ export default function Home({ images }){
           <h3>Model architecture and training</h3>
           <p>The encoder is a residual MLP with Squeeze-and-Excitation (SE) attention blocks; the SE blocks provide feature-wise excitation weights that aid interpretability. Training uses a focal-modified SupCon loss that emphasizes hard/ambiguous samples (focal parameter γ = 2.0) and a temperature τ = 0.02. Regularization included dropout (≈0.54), Gaussian signal augmentation (σ=0.012), cosine learning-rate annealing, and weight decay.</p>
           <div className="methods-figure-wrapper">
-            <img src={'/images/image5.png'} alt="Methods figure" className="methods-figure" />
+            <img src={withBasePath('/images/image5.png')} alt="Methods figure" className="methods-figure" />
             <p className="methods-figure-text">Figure (Methods): Pipeline overview — data preprocessing, within-fold SMOTE, focal supervised contrastive encoder, and downstream classifiers. This figure summarizes the end-to-end pipeline used to extract spectral and coherence biomarkers.</p>
           </div>
         </section>
@@ -63,10 +64,10 @@ export default function Home({ images }){
           <h3>Main result figures</h3>
           <p className="note">Key figures highlighting model performance and embeddings. Image 4 is emphasized.</p>
           <div className="results-grid">
-            <figure className="result-figure"><img src={'/images/image1.png'} alt="Result 1"/></figure>
-            <figure className="result-figure"><img src={'/images/image2.png'} alt="Result 2"/></figure>
-            <figure className="result-figure"><img src={'/images/image3.png'} alt="Result 3"/></figure>
-            <figure className="result-figure highlight"><img src={'/images/image4.png'} alt="Result 4 (highlight)"/></figure>
+            <figure className="result-figure"><img src={withBasePath('/images/image1.png')} alt="Result 1"/></figure>
+            <figure className="result-figure"><img src={withBasePath('/images/image2.png')} alt="Result 2"/></figure>
+            <figure className="result-figure"><img src={withBasePath('/images/image3.png')} alt="Result 3"/></figure>
+            <figure className="result-figure highlight"><img src={withBasePath('/images/image4.png')} alt="Result 4 (highlight)"/></figure>
           </div>
         </section>
 
